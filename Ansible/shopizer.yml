@@ -1,0 +1,12 @@
+---
+-hosts: all
+ become: yes
+ sudo: yes
+ tasks:
+ - name: deploy the shopizer in the tomcat
+   copy:
+    src: https://github.com/shopizer-ecommerce/shopizer.git
+    dest: /var/lib/tomcat7/webapps/
+    owner: 0777
+    group: 0644
+    mode: 0644
